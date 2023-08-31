@@ -9,7 +9,6 @@ services:
       load_balancer:
         tenancy: dedicated
         type: webserver
-        healthcheck:
     environment: 
       - discovery.type=single-node
       - xpack.security.enabled=false
