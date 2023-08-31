@@ -22,6 +22,8 @@ services:
       context: .
     depends_on: 
       - elasticsearch
+    x-tinkr:
+      memory: 1024
     ports:
       - 12201:12201/udp
     networks:
