@@ -16,18 +16,14 @@ services:
       - logging-network
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:7.17.1
+    build:
+      context: .
     depends_on: 
       - elasticsearch
     ports:
       - 12201:12201/udp
-    volumes:
-      - logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
     networks:
       - logging-network
-    x-tinkr:
-      cpu: 512
-      memory: 512
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.17.1
