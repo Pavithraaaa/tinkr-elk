@@ -9,6 +9,8 @@ services:
       load_balancer:
         tenancy: dedicated
         type: webserver
+    ports:
+      - 9200:9200
     environment: 
       - discovery.type=single-node
       - xpack.security.enabled=false
