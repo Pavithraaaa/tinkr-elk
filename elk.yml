@@ -20,10 +20,13 @@ services:
   logstash:
     build:
       context: .
+      dockerfile: Dockerfile.logstash
     depends_on: 
       - elasticsearch
     x-tinkr:
       memory: 1024
+      environment: 
+        -  ELASTIC_SEARCH_HOST=<hostname:elasticsearch> 
     ports:
       - 12201:12201/udp
     networks:
@@ -37,6 +40,8 @@ services:
       - 5601:5601
     x-tinkr:
       memory: 1024
+      environment:
+        - ELASTIC_SEARCH_HOST=<hostname:elasticsearch>
       load_balancer:
         tenancy: dedicated
         type: webserver
