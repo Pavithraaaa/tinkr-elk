@@ -20,7 +20,7 @@ services:
   logstash:
     build:
       context: .
-      dockerfile: Dockerfile.logstash
+      dockerfile: Dockerfile-logstash
     depends_on: 
       - elasticsearch
     x-tinkr:
