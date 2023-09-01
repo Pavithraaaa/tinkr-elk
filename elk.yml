@@ -26,7 +26,7 @@ services:
     x-tinkr:
       memory: 1024
       environment: 
-        -  ELASTIC_SEARCH_HOST=<hostname:elasticsearch> 
+        -  ELASTIC_SEARCH_HOSTS=<hostname:elasticsearch> 
     ports:
       - 12201:12201/udp
     networks:
@@ -41,7 +41,7 @@ services:
     x-tinkr:
       memory: 1024
       environment:
-        - ELASTIC_SEARCH_HOST=<hostname:elasticsearch>
+        - ELASTIC_SEARCH_HOSTS=<hostname:elasticsearch>
       load_balancer:
         tenancy: dedicated
         type: webserver
