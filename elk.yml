@@ -19,7 +19,7 @@ services:
 
   logstash:
     build:
-      context: .
+      context: logstash
       #dockerfile: logstash.Dockerfile
     depends_on: 
       - elasticsearch
@@ -33,7 +33,8 @@ services:
       - logging-network
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.17.1
+    build:
+      context: kibana
     depends_on:
       - logstash
     ports: 
