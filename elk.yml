@@ -8,7 +8,7 @@ services:
       memory: 3096
       load_balancer:
         tenancy: dedicated
-        type: webserver
+        type: network
     ports:
       - 9200:9200
     environment: 
