@@ -33,8 +33,7 @@ services:
       - logging-network
 
   kibana:
-    build:
-      context: kibana
+    image: docker.elastic.co/kibana/kibana:7.17.1
     depends_on:
       - logstash
     ports: 
@@ -42,7 +41,7 @@ services:
     x-tinkr:
       memory: 1024
       environment:
-        - ELASTIC_SEARCH_HOSTS=<hostname:elasticsearch>
+        - ELASTICSEARCH_HOSTS=<hostname:elasticsearch>
       load_balancer:
         tenancy: dedicated
         type: webserver
