@@ -26,6 +26,7 @@ services:
       load_balancer:
         tenancy: dedicated
         type: network
+        network: public
         healthcheck:
           success_code: "200"
       memory: 1024
