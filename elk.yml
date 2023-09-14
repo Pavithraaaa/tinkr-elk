@@ -20,10 +20,14 @@ services:
   logstash:
     build:
       context: logstash
-      #dockerfile: logstash.Dockerfile
     depends_on: 
       - elasticsearch
     x-tinkr:
+      load_balancer:
+        tenancy: dedicated
+        type: network
+        healthcheck:
+          success_code: "200"
       memory: 1024
       environment: 
         -  ELASTIC_SEARCH_HOSTS=http://<hostname:elasticsearch>:9200
