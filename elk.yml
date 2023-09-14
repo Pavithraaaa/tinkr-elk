@@ -26,7 +26,7 @@ services:
     x-tinkr:
       memory: 1024
       environment: 
-        -  ELASTIC_SEARCH_HOSTS=<hostname:elasticsearch> 
+        -  ELASTIC_SEARCH_HOSTS=http://<hostname:elasticsearch>:9200
     ports:
       - 12201:12201/udp
     networks:
