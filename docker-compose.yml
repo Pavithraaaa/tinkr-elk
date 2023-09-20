@@ -33,7 +33,8 @@ services:
       environment: 
         -  ELASTIC_SEARCH_HOSTS=http://<hostname:elasticsearch>:9200
     ports:
-      - 12201:12201/udp
+      #- 12201:12201/udp
+      - 9600:9600
     networks:
       - logging-network
 
