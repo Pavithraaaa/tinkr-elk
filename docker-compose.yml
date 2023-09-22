@@ -48,7 +48,7 @@ services:
       cpu: 1024
       memory: 1024
       environment:
-        - ELASTICSEARCH_HOSTS=http://<hostname:elasticsearch>
+        - ELASTICSEARCH_HOSTS=http://<hostname:elasticsearch>:9200
       load_balancer:
         tenancy: dedicated
         type: webserver
