@@ -1,3 +1,0 @@
-server.host: "0.0.0.0"
-server.shutdownTimeout: "5s"
-elasticsearch.hosts: ["http://$ELASTIC_SEARCH_HOSTS"]
